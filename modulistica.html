@@ -6,35 +6,41 @@
     <title>Modulistica - Polo d'Infanzia Madre Teresa di Calcutta</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/components.js" defer></script>
+    <style>body { background-color: #eaf6db; }</style>
 </head>
 <body>
     <site-header></site-header>
-    <main style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <h1 style="color: var(--c-forest); font-family: var(--font-script); font-size: 3rem; text-align: center; margin-bottom: 1rem;">Modulistica</h1>
-        <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
-            
-            <h2 style="color: var(--c-blue); margin-bottom: 1.5rem; border-bottom: 2px solid var(--c-border-subtle); padding-bottom: 0.5rem;">Documenti per i Genitori</h2>
-            
-            <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2rem;">
-                <li style="margin-bottom: 1rem;">
-                    <a href="#" style="color: var(--c-forest); font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="color: var(--c-pink);">-></span> MODULO ISCRIZIONE SCUOLA DELL'INFANZIA A.S. 2026/2027
-                    </a>
-                </li>
-                <li style="margin-bottom: 1rem;">
-                    <a href="#" style="color: var(--c-forest); font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="color: var(--c-pink);">-></span> REGOLAMENTO DELLA SCUOLA PER A.S. 2026/2027
-                    </a>
-                </li>
-            </ul>
 
-            <div style="background: var(--c-surface-soft); padding: 1rem; border-radius: var(--radius-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <span style="color: var(--c-blue); font-weight: bold;">> CRITERI IGIENICO-SANITARI (aggiornati a Ottobre 2025)</span>
-                <a href="#" class="btn btn-secondary" style="padding: 0.4rem 1rem; min-height: auto;">Download</a>
+    <main style="padding: 1rem 2rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <!-- Placeholder for the big modulistica image shown in screenshot -->
+            <div style="display: inline-flex; align-items: center; gap: 1rem;">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="var(--c-blue)"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                <h1 style="color: var(--c-blue); font-size: 3rem; font-weight: bold; margin: 0;">Modulistica<br>GENITORI</h1>
             </div>
+        </div>
 
+        <h2 style="color: #bbb; font-weight: normal; font-size: 2rem; margin-bottom: 2rem;">MODULISTICA</h2>
+        
+        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 2rem;">
+            <li style="margin-bottom: 1.5rem;">
+                <a href="#" style="color: var(--c-blue); font-weight: bold; text-decoration: underline; font-size: 1.1rem;">
+                    <span style="color: var(--c-pink); text-decoration: none;">-></span> MODULO ISCRIZIONE SCUOLA DELL'INFANZIA A.S. 2026/2027
+                </a>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <a href="#" style="color: var(--c-blue); font-weight: bold; text-decoration: underline; font-size: 1.1rem;">
+                    <span style="color: var(--c-pink); text-decoration: none;">-></span> REGOLAMENTO DELLA SCUOLA PER A.S. 2026/2027
+                </a>
+            </li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 3rem;">
+            <a href="#" style="color: var(--c-blue); font-weight: bold; text-decoration: underline;">> CRITERI IGIENICO-SANITARI (aggiornati a Ottobre 2025)</a>
+            <a href="#" style="border: 1px solid var(--c-blue); color: var(--c-blue); padding: 0.5rem 1.5rem; border-radius: 4px; text-decoration: none;">Download</a>
         </div>
     </main>
+
     <site-footer></site-footer>
 </body>
 </html>

@@ -4,89 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polo d'Infanzia Paritario "Madre Teresa di Calcutta" - San Pietro in Vincoli</title>
-    
-    <meta name="description" content="Nido e Scuola dell'Infanzia a San Pietro in Vincoli (Ravenna). Un ambiente accogliente per la crescita dei bambini dai 9 mesi ai 6 anni.">
-    
     <link rel="stylesheet" href="css/style.css">
     <script src="js/components.js" defer></script>
-    
     <style>
-        .news-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .news-card h2 {
-            color: var(--c-teal);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        .placeholder-img {
-            background: var(--c-surface-soft);
-            color: var(--c-text-muted);
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 4/3;
-            margin: 1rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--radius-sm);
-            border: 2px dashed var(--c-border);
-        }
+        body { background-color: #eaf6db; }
+        .news-card { padding: 1rem 0; margin-bottom: 2rem; text-align: center; }
+        .news-card h2 { color: var(--c-teal); margin-bottom: 0.5rem; font-size: 1.3rem; font-weight: bold; }
+        .news-card img { max-width: 100%; height: auto; margin: 0 auto; display: block; border: 1px solid #eee; }
+        .siti-utilita { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; align-items: center; margin-top: 1rem; }
+        .siti-utilita img { max-height: 60px; object-fit: contain; }
     </style>
 </head>
 <body>
     <site-header></site-header>
 
-    <main style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <main style="padding: 1rem 2rem;">
+        <h1 style="color: var(--c-forest); font-size: 1.5rem; margin-bottom: 1.5rem;">Home</h1>
         
-        <h1 style="color: var(--c-forest); font-family: var(--font-script); font-size: 3rem; margin-bottom: 2rem;">Home</h1>
-        
         <section class="news-card">
-            <h2>Sono aperte le ISCRIZIONI al CENTRO ESTIVO 2026 "Esplori...amo la natura!!!"</h2>
-            <div class="placeholder-img">Locandina Centro Estivo 2026</div>
+            <h2>Sono aperte le ISCRIZIONI al CENTRO ESTIVO 2026<br>"Esplori...amo la natura!!!"</h2>
+            <img src="images/centro_estivo2026.png" alt="Locandina Centro Estivo 2026" style="max-width: 500px;">
         </section>
 
         <section class="news-card">
-            <h2>OPEN DAY per A.S. 2026/27 del Polo d'Infanzia Parrocchiale Paritario "Madre Teresa di Calcutta"!</h2>
-            <a href="#" style="color: var(--c-blue); text-decoration: underline; display: block; margin-bottom: 1rem;">vai alla notizia</a>
-            <div class="placeholder-img">Locandina Open Day</div>
+            <h2>OPEN DAY per A.S. 2026/27<br>del Polo d'Infanzia Parrocchiale Paritario<br>"Madre Teresa di Calcutta"!<br><a href="#" style="color: var(--c-blue); text-decoration: underline; font-size: 1rem; font-weight: normal;">vai alla notizia</a></h2>
+            <img src="images/asilo.madreteresaspiv_20251209_161923_0000_page-0001.jpg" alt="Locandina Open Day" style="max-width: 600px;">
         </section>
 
         <section class="news-card">
-            <h2>Bonus Nido d'infanzia 2026/2027</h2>
-            <a href="#" style="color: var(--c-blue); text-decoration: underline; display: block; margin-bottom: 1rem;">vai alla notizia</a>
-            <div class="placeholder-img" style="aspect-ratio: 2/1;">Immagine Bonus Nido</div>
+            <h2>Bonus Nido d'infanzia 2026/2027 <a href="#" style="color: var(--c-blue); text-decoration: underline; font-size: 1rem; font-weight: normal;">vai alla notizia</a></h2>
+            <img src="images/bonus_nido.jpg" alt="Immagine Bonus Nido" style="border-radius: 50%; max-width: 400px; border: none;">
         </section>
 
         <section class="news-card">
-            <h2>Un Click per la scuola</h2>
-            <a href="#" style="color: var(--c-blue); text-decoration: underline; display: block; margin-bottom: 1rem;">vai alla notizia</a>
-            <p style="color: var(--c-text-muted);">Iniziativa valida dal 10 Ottobre 2025 al 21 Dicembre 2025</p>
-            <div class="placeholder-img" style="aspect-ratio: 3/1; max-width: 700px;">Banner Un Click per la scuola</div>
+            <h2>Un Click per la scuola <a href="#" style="color: var(--c-blue); text-decoration: underline; font-size: 1rem; font-weight: normal;">vai alla notizia</a></h2>
+            <p style="color: var(--c-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Iniziativa valida dal 10 Ottobre 2025 al 21 Dicembre 2025</p>
+            <img src="images/amazon_unpls_banners_970x250.png" alt="Banner Un Click per la scuola">
         </section>
 
         <section class="news-card">
-            <h2 style="color: var(--c-orange); text-transform: uppercase;">Laboratori-Eventi Passati</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 1</div>
-                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 2</div>
-                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 3</div>
-                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 4</div>
-            </div>
+            <h2 style="color: var(--c-orange); text-transform: uppercase;">LABORATORI-EVENTI PASSATE</h2>
+            <img src="images/img_20221024_200209_232.jpg" alt="Foto laboratori passati" style="max-width: 600px;">
         </section>
 
-        <section style="text-align: center; margin-top: 3rem;">
-            <p style="font-size: 0.8rem; color: var(--c-text-muted); text-transform: uppercase; margin-bottom: 1rem;">Siti Di Utilità Istituzionale:</p>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: center;">
-                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">Nati per Leggere</div>
-                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">FISM</div>
-                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">Ministero</div>
-                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">Scuola in Chiaro</div>
+        <section style="text-align: left; margin-top: 3rem; border-top: 1px solid var(--c-border); padding-top: 2rem;">
+            <p style="font-size: 0.8rem; color: var(--c-text-muted); text-transform: uppercase; margin-bottom: 1rem; font-weight: bold;">SITI DI UTILITA' ISTITUZIONALE:</p>
+            <div class="siti-utilita">
+                <img src="images/miur-1.png" alt="Nati per Leggere">
+                <img src="images/fism-emilia-romagna.jpg" alt="FISM">
+                <img src="images/scuola-in-chiaro-1.png" alt="Scuola in Chiaro">
             </div>
         </section>
 
