@@ -6,87 +6,90 @@
     <title>Polo d'Infanzia Paritario "Madre Teresa di Calcutta" - San Pietro in Vincoli</title>
     
     <meta name="description" content="Nido e Scuola dell'Infanzia a San Pietro in Vincoli (Ravenna). Un ambiente accogliente per la crescita dei bambini dai 9 mesi ai 6 anni.">
-    <meta name="geo.region" content="IT-RA">
-    <meta name="geo.placename" content="San Pietro in Vincoli, Ravenna">
     
     <link rel="stylesheet" href="css/style.css">
     <script src="js/components.js" defer></script>
     
     <style>
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .card {
+        .news-card {
             background: white;
-            border-radius: var(--radius-md);
             padding: 2rem;
-            text-align: center;
+            border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
-            border-top: 5px solid var(--c-primary);
-            transition: var(--transition);
+            margin-bottom: 2rem;
+            text-align: center;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+        .news-card h2 {
+            color: var(--c-teal);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-        .card-nido { border-color: var(--c-orange); }
-        .card-infanzia { border-color: var(--c-blue); }
-        .card h2 { font-family: var(--font-script); font-size: 2.2rem; margin-bottom: 1rem; }
-        .card-nido h2 { color: var(--c-orange); }
-        .card-infanzia h2 { color: var(--c-blue); }
+        .placeholder-img {
+            background: var(--c-surface-soft);
+            color: var(--c-text-muted);
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 4/3;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            border: 2px dashed var(--c-border);
+        }
     </style>
 </head>
 <body>
     <site-header></site-header>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="footprints-decor">
-                    <svg class="footprint-svg footprint-1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 4 6 4 11C4 16 8 22 12 22C16 22 20 16 20 11C20 6 16 2 12 2Z"/></svg>
-                    <svg class="footprint-svg footprint-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 4 6 4 11C4 16 8 22 12 22C16 22 20 16 20 11C20 6 16 2 12 2Z"/></svg>
-                    <svg class="footprint-svg footprint-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 4 6 4 11C4 16 8 22 12 22C16 22 20 16 20 11C20 6 16 2 12 2Z"/></svg>
-                </div>
-                
-                <h1 class="hero-title">
-                    <span class="title-prefix">Benvenuti al Polo d'Infanzia</span>
-                    <span class="word-oggi">Madre Teresa</span> di Calcutta
-                </h1>
-                
-                <p class="hero-description">
-                    Un ambiente educativo sereno, sicuro e stimolante per bambini dai 9 mesi ai 6 anni. Cresciamo insieme, un passo alla volta, nel cuore di San Pietro in Vincoli.
-                </p>
-                
-                <div class="hero-cta-group">
-                    <a href="iscrizioni.html" class="btn btn-primary">Informazioni e Iscrizioni</a>
-                    <a href="contatti.html" class="btn btn-secondary">Contattaci</a>
-                </div>
+    <main style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+        
+        <h1 style="color: var(--c-forest); font-family: var(--font-script); font-size: 3rem; margin-bottom: 2rem;">Home</h1>
+        
+        <section class="news-card">
+            <h2>Sono aperte le ISCRIZIONI al CENTRO ESTIVO 2026 "Esplori...amo la natura!!!"</h2>
+            <div class="placeholder-img">Locandina Centro Estivo 2026</div>
+        </section>
+
+        <section class="news-card">
+            <h2>OPEN DAY per A.S. 2026/27 del Polo d'Infanzia Parrocchiale Paritario "Madre Teresa di Calcutta"!</h2>
+            <a href="#" style="color: var(--c-blue); text-decoration: underline; display: block; margin-bottom: 1rem;">vai alla notizia</a>
+            <div class="placeholder-img">Locandina Open Day</div>
+        </section>
+
+        <section class="news-card">
+            <h2>Bonus Nido d'infanzia 2026/2027</h2>
+            <a href="#" style="color: var(--c-blue); text-decoration: underline; display: block; margin-bottom: 1rem;">vai alla notizia</a>
+            <div class="placeholder-img" style="aspect-ratio: 2/1;">Immagine Bonus Nido</div>
+        </section>
+
+        <section class="news-card">
+            <h2>Un Click per la scuola</h2>
+            <a href="#" style="color: var(--c-blue); text-decoration: underline; display: block; margin-bottom: 1rem;">vai alla notizia</a>
+            <p style="color: var(--c-text-muted);">Iniziativa valida dal 10 Ottobre 2025 al 21 Dicembre 2025</p>
+            <div class="placeholder-img" style="aspect-ratio: 3/1; max-width: 700px;">Banner Un Click per la scuola</div>
+        </section>
+
+        <section class="news-card">
+            <h2 style="color: var(--c-orange); text-transform: uppercase;">Laboratori-Eventi Passati</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 1</div>
+                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 2</div>
+                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 3</div>
+                <div class="placeholder-img" style="aspect-ratio: 1; max-width: 100%;">Foto 4</div>
             </div>
         </section>
 
-        <section class="cards-grid">
-            <a href="nido.html" class="card card-nido">
-                <h2>Asilo Nido</h2>
-                <p>Accogliamo i bambini dai 9 ai 36 mesi in un ambiente protetto e stimolante, studiato per le loro prime importanti scoperte.</p>
-            </a>
-            <a href="infanzia.html" class="card card-infanzia">
-                <h2>Scuola dell'Infanzia</h2>
-                <p>Per bambini dai 3 ai 6 anni. Un percorso educativo volto all'autonomia, alla socializzazione e allo sviluppo delle competenze.</p>
-            </a>
-        </section>
-        
-        <section style="max-width: 900px; margin: 3rem auto; padding: 0 1rem; text-align: center;">
-            <h2 style="font-size: 1.8rem; color: var(--c-forest); margin-bottom: 1.5rem;">Ultime News e Avvisi</h2>
-            <div style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 5px solid var(--c-yellow); text-align: left;">
-                <h3 style="color: var(--c-text); font-size: 1.3rem;">Benvenuti nel nostro nuovo sito!</h3>
-                <p style="color: var(--c-text-muted); margin-top: 0.5rem;">Stiamo rinnovando la nostra presenza online per offrirti un'esperienza più veloce, chiara e moderna. Esplora le sezioni per scoprire tutti i dettagli sul Nido e la Scuola dell'Infanzia.</p>
+        <section style="text-align: center; margin-top: 3rem;">
+            <p style="font-size: 0.8rem; color: var(--c-text-muted); text-transform: uppercase; margin-bottom: 1rem;">Siti Di Utilità Istituzionale:</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">Nati per Leggere</div>
+                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">FISM</div>
+                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">Ministero</div>
+                <div style="width: 100px; height: 50px; background: white; border: 1px solid var(--c-border); display:flex; align-items:center; justify-content:center; font-size: 0.7rem;">Scuola in Chiaro</div>
             </div>
         </section>
+
     </main>
 
     <site-footer></site-footer>
