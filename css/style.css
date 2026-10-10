@@ -1,0 +1,2450 @@
+        /* ==========================================================================
+           0. FONT SELF-HOSTED IN LOCALE (100% GDPR COMPLIANT - ZERO CHIAMATE ESTERNE)
+           ========================================================================== */
+        @font-face {
+            font-family: 'Caveat';
+            font-style: normal;
+            font-weight: 600;
+            font-display: optional;
+            src: url('fonts/caveat-600-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Caveat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: optional;
+            src: url('fonts/caveat-700-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 400;
+            font-display: optional;
+            src: url('fonts/titilliumweb-400-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 600;
+            font-display: optional;
+            src: url('fonts/titilliumweb-600-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 700;
+            font-display: optional;
+            src: url('fonts/titilliumweb-700-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* ==========================================================================
+           1. VARIABILI E DESIGN SYSTEM MOBILE FIRST
+           Colori fedeli al Roll-Up e alla Tessera Associativa
+           ========================================================================== */
+        :root {
+            --c-forest: #2d5a27;      /* Verde Scuro Istituzionale */
+            --c-primary: #3d792b;     /* Verde Prato Logo */
+            --c-leaf: #689f38;        /* Verde Mela / Sostenere */
+            --c-orange: #c54316;      /* Arancione Accessibile WCAG AAA */
+            --c-blue: #1d70b8;        /* Blu Scritta "Piccoli Passi" / Eventi */
+            --c-yellow: #f4b223;      /* Giallo Sole */
+            --c-pink: #c8385e;        /* Magenta / Creare Comunità */
+            --c-teal: #169388;        /* Turchese / Territorio */
+            --c-amber: #e67e22;       /* Ambra / Partecipazione */
+            
+            --c-bg: #fdfbf7;          /* Panna caldo carta naturale */
+            --c-surface: #ffffff;
+            --c-surface-soft: #f4f8f1;
+            --c-border: #e0e7dc;
+            --c-border-subtle: #edf3e9;
+
+            --c-text: #212b30;
+            --c-text-muted: #51636d;
+            --c-text-light: #51636d;
+
+            --font-main: "Titillium Web", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-script: "Caveat", "Segoe Script", "Comic Sans MS", cursive;
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 2px 6px rgba(45, 90, 39, 0.07);
+            --shadow-md: 0 6px 18px rgba(45, 90, 39, 0.10);
+            --shadow-lg: 0 12px 28px rgba(45, 90, 39, 0.14);
+            --transition: all 0.2s ease-in-out;
+        }
+
+        /* RESET & BASE OTTIMIZZATO */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.55;
+            font-size: 16px;
+            background-color: var(--c-bg);
+            background-image: radial-gradient(#dbe8d2 1.2px, transparent 1.2px);
+            background-size: 28px 28px;
+            color: var(--c-text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            word-wrap: break-word;
+        }
+
+        img, picture {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        /* ACCESSIBILITÀ & FOCUS */
+        :focus-visible {
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 1rem;
+            background: var(--c-orange);
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            z-index: 999;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        /* CLASSE DI ACCESSIBILITÀ SCREEN READER ONLY (WCAG) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ==========================================================================
+           2. HEADER MOBILE-FIRST
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #ffffff;
+            border-bottom: 3px solid var(--c-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.65rem 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: #ffffff;
+            border: 2px solid var(--c-primary);
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--c-blue);
+        }
+
+        .brand-title .brand-accent {
+            color: var(--c-orange);
+            font-family: var(--font-script);
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-right: 2px;
+        }
+
+        .brand-subtitle {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--c-forest);
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        /* PULSANTE HAMBURGER MOBILE (Min 44x44px per accessibilità WCAG) */
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 44px;
+            height: 44px;
+            padding: 8px;
+            background: transparent;
+            border: 2px solid var(--c-border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-toggle:hover,
+        .nav-toggle:focus-visible {
+            border-color: var(--c-primary);
+            background: var(--c-surface-soft);
+            outline: 2px solid var(--c-primary);
+            outline-offset: 2px;
+        }
+
+        .hamburger-bar {
+            display: block;
+            width: 22px;
+            height: 2.5px;
+            background-color: var(--c-forest);
+            border-radius: 2px;
+            transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
+            transform-origin: center;
+        }
+
+        /* Animazione Hamburger -> X */
+        .nav-toggle.is-active {
+            border-color: var(--c-orange);
+            background: #fff4ed;
+        }
+
+        .nav-toggle.is-active .hamburger-bar {
+            background-color: var(--c-orange);
+        }
+
+        .nav-toggle.is-active .hamburger-bar:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+
+        .nav-toggle.is-active .hamburger-bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .nav-toggle.is-active .hamburger-bar:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        /* MENU MOBILE A TENDINA COLLASSABILE */
+        .main-nav {
+            display: none;
+            width: 100%;
+            margin-top: 0.5rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--c-border-subtle);
+        }
+
+        .main-nav.is-open {
+            display: block;
+            animation: navSlideDown 0.22s ease-out forwards;
+        }
+
+        @keyframes navSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            list-style: none;
+            gap: 0.25rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav a {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--c-forest);
+            padding: 0.7rem 1rem;
+            border-radius: var(--radius-sm);
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            color: var(--c-orange);
+            background: var(--c-surface-soft);
+        }
+
+        .nav-cta {
+            background: var(--c-orange) !important;
+            color: #ffffff !important;
+            border-radius: var(--radius-md) !important;
+            font-weight: 700 !important;
+            padding: 0.7rem 1.2rem !important;
+            text-align: center;
+            justify-content: center !important;
+            box-shadow: 0 3px 8px rgba(226, 85, 36, 0.25);
+            margin-top: 0.35rem;
+        }
+
+        .nav-cta:hover,
+        .nav-cta:focus-visible {
+            background: #c74316 !important;
+            color: #ffffff !important;
+        }
+
+        .nav-dona {
+            background: var(--c-primary) !important;
+            color: #ffffff !important;
+            border-radius: var(--radius-md) !important;
+            font-weight: 700 !important;
+            padding: 0.7rem 1.2rem !important;
+            text-align: center;
+            justify-content: center !important;
+            margin-top: 0.2rem;
+        }
+        .nav-dona:hover,
+        .nav-dona:focus-visible {
+            background: var(--c-forest) !important;
+            color: #ffffff !important;
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION
+           ========================================================================== */
+        .hero-section {
+            padding: 1.75rem 1rem 2.25rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(244, 248, 241, 0.85) 0%, rgba(253, 251, 247, 1) 100%);
+            border-bottom: 1px solid var(--c-border-subtle);
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge-wrap {
+            margin-bottom: 0.85rem;
+            display: inline-block;
+        }
+
+        .hero-logo-img {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: var(--shadow-md), 0 0 0 8px rgba(61, 121, 43, 0.12);
+            border: 5px solid var(--c-primary);
+            object-fit: contain;
+        }
+
+        .footprints-decor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 0.75rem 0 0.5rem;
+        }
+
+        .footprint-svg {
+            width: 20px;
+            height: 30px;
+        }
+
+        .footprint-1 { color: var(--c-primary); transform: rotate(-10deg); }
+        .footprint-2 { color: var(--c-orange); transform: rotate(15deg); }
+        .footprint-3 { color: var(--c-blue); transform: rotate(-5deg); }
+        .footprint-4 { color: var(--c-pink); transform: rotate(20deg); }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .footprint-1 { animation: bounceFootprint 3s ease-in-out infinite; animation-delay: 0s; }
+            .footprint-2 { animation: bounceFootprint 3s ease-in-out infinite; animation-delay: 0.3s; }
+            .footprint-3 { animation: bounceFootprint 3s ease-in-out infinite; animation-delay: 0.6s; }
+            .footprint-4 { animation: bounceFootprint 3s ease-in-out infinite; animation-delay: 0.9s; }
+        }
+
+        @keyframes bounceFootprint {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.18;
+            color: var(--c-forest);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title .title-prefix {
+            display: block;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--c-forest);
+            margin-bottom: 0.15rem;
+        }
+
+        .hero-title .word-oggi {
+            color: var(--c-orange);
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .word-oggi::after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: rgba(244, 178, 35, 0.4);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-title .word-domani {
+            font-family: var(--font-script);
+            font-size: 2.2rem;
+            color: var(--c-forest);
+            font-weight: 700;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--c-text-muted);
+            line-height: 1.6;
+            margin: 0 auto 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .hero-cf-badge {
+            display: inline-block;
+            background: #ffffff;
+            border: 1.5px solid var(--c-border);
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            color: var(--c-forest);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius-full);
+            min-height: 48px;
+            width: 100%;
+            max-width: 320px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--c-orange);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:active {
+            background-color: #c74316;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--c-forest);
+            border-color: var(--c-primary);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:active {
+            background-color: var(--c-surface-soft);
+            color: var(--c-primary);
+            transform: translateY(-2px);
+        }
+
+        .color-dots {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0.85rem 0;
+        }
+
+        .color-dots span {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-1 { background-color: var(--c-orange); }
+        .dot-2 { background-color: var(--c-primary); }
+        .dot-3 { background-color: var(--c-blue); }
+        .dot-4 { background-color: var(--c-pink); }
+
+        /* ==========================================================================
+           4. NASTRO / RIBBON BANNER
+           ========================================================================== */
+        .ribbon-wrap {
+            text-align: center;
+            margin: 1rem auto 1.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .ribbon-banner {
+            position: relative;
+            display: inline-block;
+            background: var(--c-forest);
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.65rem 1.6rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(45, 90, 39, 0.2);
+            white-space: nowrap;
+        }
+
+        .leaf-sprig-svg {
+            width: 30px;
+            height: 24px;
+            color: var(--c-forest);
+            flex-shrink: 0;
+        }
+
+        .leaf-sprig-right {
+            transform: scaleX(-1);
+        }
+
+        /* ==========================================================================
+           5. SEZIONE FINALITÀ
+           ========================================================================== */
+        section[id],
+        .section,
+        .tessera-section,
+        .iniziative-section,
+        .donation-section,
+        .faq-section,
+        .contacts-section {
+            scroll-margin-top: 85px;
+        }
+
+        .section {
+            padding: 2.25rem 1rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.02rem;
+            color: var(--c-text-muted);
+            padding: 0 0.5rem;
+            max-width: 780px;
+            margin: 0 auto;
+            line-height: 1.45;
+        }
+
+        .grid-finalita-7,
+        .finalita-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .finalita-card {
+            background: var(--c-surface);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1rem;
+            text-align: center;
+            border: 2px solid var(--c-border);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            content-visibility: auto;
+            contain-intrinsic-size: 250px;
+        }
+
+        .finalita-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--card-color, var(--c-primary));
+        }
+
+        .finalita-icon-circle {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background-color: var(--card-color, var(--c-primary));
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.65rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .finalita-icon-circle svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .finalita-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--c-forest);
+            margin-bottom: 0.5rem;
+            line-height: 1.25;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .finalita-card p {
+            font-size: 0.92rem;
+            color: var(--c-text-muted);
+            line-height: 1.5;
+        }
+
+        .card-spazi { --card-color: var(--c-forest); }
+        .card-scuola { --card-color: var(--c-leaf); }
+        .card-eventi { --card-color: var(--c-blue); }
+        .card-progetti { --card-color: var(--c-orange); }
+        .card-comunita { --card-color: var(--c-pink); }
+        .card-territorio { --card-color: var(--c-teal); }
+        .card-partecipazione { --card-color: var(--c-amber); }
+
+        /* ==========================================================================
+           6. CITAZIONE / MANIFESTO
+           ========================================================================== */
+        .quote-section {
+            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #f3f8ee 0%, #eaf4e5 100%);
+            border-top: 2px dashed #cfe0c6;
+            border-bottom: 2px dashed #cfe0c6;
+        }
+
+        .quote-box {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 2.25rem 1.25rem;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid #b8d4ab;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-icon-heart {
+            width: 52px;
+            height: 52px;
+            background: #ffffff;
+            border: 3px solid var(--c-primary);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c-pink);
+            margin-top: -3.8rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quote-icon-heart svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .quote-text {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--c-forest);
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+
+        .quote-signature {
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+            color: var(--c-orange);
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           7. SEZIONE TESSERA ASSOCIATIVA 2026/2027 (CON VALIDITÀ ART. 8 STATUTO)
+           ========================================================================== */
+        .tessera-section {
+            padding: 2.25rem 1rem;
+            background-color: var(--c-bg);
+        }
+
+        .tessera-container,
+        .tessera-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .tessera-visual-box {
+            position: relative;
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 0.85rem;
+            box-shadow: var(--shadow-md);
+            border: 3px solid var(--c-primary);
+            width: 100%;
+            max-width: 540px;
+        }
+
+        .tessera-img {
+            border-radius: calc(var(--radius-lg) - 6px);
+            width: 100%;
+            height: auto;
+        }
+
+        .tessera-badge-anno {
+            position: absolute;
+            bottom: -12px;
+            right: 15px;
+            background: var(--c-forest);
+            color: #ffffff;
+            font-weight: 800;
+            padding: 0.4rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tessera-info-box {
+            width: 100%;
+            max-width: 540px;
+            text-align: center;
+        }
+
+        .tessera-info-box h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--c-forest);
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+
+        .tessera-motto {
+            font-family: var(--font-script);
+            font-size: 1.8rem;
+            color: var(--c-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .tessera-periodo-badge {
+            display: inline-block;
+            background: #f0f7ec;
+            color: var(--c-forest);
+            border: 1px solid #c9e0c1;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .tessera-benefits {
+            list-style: none;
+            margin: 1rem 0 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            text-align: left;
+        }
+
+        .tessera-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.98rem;
+            color: var(--c-text);
+            line-height: 1.5;
+        }
+
+        .benefit-icon {
+            width: 22px;
+            height: 22px;
+            background: #e8f3e5;
+            color: var(--c-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-icon svg {
+            width: 13px;
+            height: 13px;
+            fill: currentColor;
+        }
+
+        /* BOX IN EVIDENZA: VANTAGGIO EXTRA TESSERATI */
+        .tessera-extra-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #fffdf5;
+            border: 2px solid #f4b223;
+            border-radius: var(--radius-md);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0 1.25rem;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(244, 178, 35, 0.15);
+        }
+
+        .extra-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .extra-text {
+            font-size: 0.98rem;
+            color: #443400;
+            line-height: 1.5;
+        }
+
+        .extra-text strong {
+            color: #b84118;
+            font-weight: 800;
+        }
+
+        /* AZIONI E PULSANTI TESSERA */
+        .tessera-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .tessera-actions .btn {
+            width: 100%;
+            max-width: none;
+            justify-content: center;
+        }
+
+        .btn-tessera-email {
+            font-size: 0.98rem;
+            padding: 0.8rem 1.25rem;
+        }
+
+        /* NOTA ESPLICATIVA RILASCIO TESSERA */
+        .tessera-note {
+            margin-top: 1.1rem;
+            font-size: 0.875rem;
+            color: var(--c-text-muted);
+            line-height: 1.55;
+            text-align: left;
+            background: #f4f8f1;
+            border-left: 3px solid var(--c-primary);
+            padding: 0.7rem 0.95rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .tessera-note strong {
+            color: var(--c-forest);
+        }
+
+        /* ==========================================================================
+           7bis. SEZIONE INIZIATIVE: PROGETTO DAE "UN BATTITO PER LA VITA"
+           ========================================================================== */
+        .iniziative-section {
+            padding: 2.25rem 1rem;
+            background: #ffffff;
+            border-top: 2px solid var(--c-border);
+            border-bottom: 2px solid var(--c-border);
+        }
+
+        .iniziative-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .iniziative-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+            border: 2px solid var(--c-border);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 1.25rem;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iniziative-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--c-orange), var(--c-yellow), var(--c-primary));
+        }
+
+        .iniziative-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .iniziative-badge-progetto {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff4ed;
+            color: var(--c-orange);
+            border: 1px solid #fbdcd0;
+            padding: 0.35rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+            margin-bottom: 0.65rem;
+        }
+
+        .iniziative-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--c-forest);
+            line-height: 1.25;
+            margin-bottom: 0.85rem;
+        }
+
+        .iniziative-text {
+            color: var(--c-text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .iniziative-text p {
+            margin-bottom: 0.75rem;
+        }
+
+        .iniziative-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .dae-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.85rem;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .dae-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f4f8f1;
+            border: 1px solid #d9e8d4;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .dae-feature-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .dae-feature-item strong {
+            display: block;
+            color: var(--c-forest);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .dae-feature-item span {
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            line-height: 1.35;
+        }
+
+        .dae-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 0.5rem;
+        }
+
+        .dae-actions .btn {
+            width: 100%;
+            max-width: none;
+            justify-content: center;
+        }
+
+        .dae-visual {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .dae-visual-box {
+            position: relative;
+            background: #ffffff;
+            border: 3px solid var(--c-primary);
+            border-radius: var(--radius-lg);
+            padding: 0.75rem;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .dae-img {
+            width: 100%;
+            height: auto;
+            border-radius: calc(var(--radius-lg) - 6px);
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        .dae-badge-overlay {
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--c-forest);
+            color: #ffffff;
+            font-weight: 800;
+            padding: 0.45rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        /* ==========================================================================
+           8. NUOVA SEZIONE: SOSTIENICI CON UNA DONAZIONE / BONIFICO BANCARIO
+           ========================================================================== */
+        .donation-section {
+            padding: 2rem 1rem 3rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f4f8f1 100%);
+            border-top: 2px solid var(--c-border);
+            border-bottom: 2px solid var(--c-border);
+        }
+
+        .donation-container {
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .donation-section .ribbon-wrap {
+            margin: 0.5rem auto 0.75rem;
+        }
+
+        .donation-title,
+        .donation-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--c-forest);
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-subtitle,
+        .donation-section p.donation-subtitle {
+            font-size: 1.15rem;
+            color: var(--c-text-muted);
+            max-width: 720px;
+            margin: 0 auto 1.25rem;
+            line-height: 1.4;
+        }
+
+        /* ==========================================================================
+           8.1 GRID CARD DONAZIONE (5X1000 E BONIFICO)
+           ========================================================================== */
+        .donation-cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-cinque-per-mille {
+            background: #ffffff;
+            border: 2px solid var(--c-orange);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: left;
+            position: relative;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .cinque-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1.5px solid #fdeee7;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .cinque-name-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cinque-icon {
+            width: 38px;
+            height: 38px;
+            background: #fff0e8;
+            color: #b83b0f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cinque-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .cinque-title {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--c-forest);
+            line-height: 1.3;
+        }
+
+        .cinque-badge {
+            font-size: 0.85rem;
+            background: #fff0e8;
+            color: #9e2a06;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid #fcd9c7;
+        }
+
+        .cinque-desc {
+            font-size: 0.95rem;
+            color: var(--c-text);
+            line-height: 1.5;
+            margin: 0 0 0.65rem 0;
+        }
+
+        .cinque-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .cinque-bullets li strong {
+            color: var(--c-forest);
+        }
+
+        .cf-highlight-box {
+            background: #fdfaf7;
+            border: 1.5px dashed #c04216;
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .cf-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #51636d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cf-code-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cf-code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #9e2a06;
+            letter-spacing: 2px;
+            word-break: break-all;
+        }
+
+        .btn-copy-cf {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #c04216;
+            color: #ffffff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            min-height: 44px;
+            min-width: 44px;
+            box-sizing: border-box;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 6px rgba(192, 66, 22, 0.28);
+            flex-shrink: 0;
+        }
+
+        .btn-copy-cf:hover {
+            background: #9e2a06;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(192, 66, 22, 0.35);
+        }
+
+        .btn-copy-cf:focus-visible {
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
+        }
+
+        .btn-copy-cf.copied {
+            background: #198754 !important;
+        }
+
+        .bank-card {
+            background: #ffffff;
+            border: 2px solid var(--c-primary);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: left;
+            position: relative;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .bank-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1.5px solid var(--c-border-subtle);
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .bank-name-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--c-forest);
+        }
+
+        .bank-icon {
+            width: 38px;
+            height: 38px;
+            background: #e8f3e5;
+            color: var(--c-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bank-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .bank-account-type {
+            font-size: 0.85rem;
+            background: #edf5fa;
+            color: var(--c-blue);
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+        }
+
+        .iban-highlight-box {
+            background: #f8faf6;
+            border: 1.5px dashed var(--c-primary);
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .iban-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--c-text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .iban-code-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .iban-code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--c-forest);
+            letter-spacing: 1px;
+            word-break: break-all;
+        }
+
+        .btn-copy-iban {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--c-primary);
+            color: #ffffff;
+            border: none;
+            padding: 0.6rem 1.1rem;
+            min-height: 44px;
+            min-width: 44px;
+            box-sizing: border-box;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 6px rgba(61, 121, 43, 0.25);
+            flex-shrink: 0;
+        }
+
+        .btn-copy-iban:hover {
+            background: var(--c-forest);
+            transform: translateY(-2px);
+        }
+
+        .btn-copy-iban:focus-visible {
+            outline: 3px solid var(--c-orange);
+            outline-offset: 3px;
+        }
+
+        .btn-copy-iban.copied {
+            background: #198754 !important;
+        }
+
+        .bank-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .bank-detail-item strong {
+            color: var(--c-forest);
+            display: inline-block;
+            min-width: 130px;
+        }
+
+        .bank-causali-wrap {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--c-border-subtle);
+            font-size: 0.92rem;
+        }
+
+        .bank-causali-title {
+            color: var(--c-forest);
+            display: block;
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+        }
+
+        .bank-causali-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            color: var(--c-text-muted);
+            padding: 0;
+            margin: 0;
+        }
+
+        .bank-causali-note {
+            font-size: 0.82rem;
+            color: var(--c-text-muted);
+            margin-top: 0.55rem;
+            line-height: 1.4;
+        }
+
+        .donation-transparency-note {
+            background: #ffffff;
+            border-left: 4px solid var(--c-orange);
+            padding: 0.75rem 1.1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+            text-align: left;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .donation-transparency-note strong {
+            color: var(--c-forest);
+        }
+
+        /* ==========================================================================
+           9. FAQ SEMANTICHE PER MOTORI IA E UTENTI (GEO / ACCORDION)
+           ========================================================================== */
+        .faq-section {
+            padding: 2.25rem 1rem;
+            background: #ffffff;
+            border-top: 1px solid var(--c-border);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .faq-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--c-forest);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-intro {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--c-text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--c-bg);
+            border: 1.5px solid var(--c-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item[open] {
+            border-color: var(--c-primary);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-summary {
+            padding: 1.1rem 1.25rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--c-forest);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 48px;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--c-orange);
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .faq-item[open] .faq-summary::after {
+            content: '−';
+            color: var(--c-primary);
+        }
+
+        .faq-content {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--c-text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            border-top: 1px solid var(--c-border-subtle);
+            padding-top: 0.85rem;
+        }
+
+        /* ==========================================================================
+           10. UNISCITI A NOI & CONTATTI REALI (NAP - LOCAL SEO)
+           ========================================================================== */
+        .contacts-section {
+            padding: 2.25rem 1rem;
+            background: linear-gradient(180deg, var(--c-bg) 0%, rgba(235, 244, 230, 0.7) 100%);
+        }
+
+        .contacts-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .unisciti-tag {
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--c-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.35rem;
+        }
+
+        .unisciti-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--c-forest);
+            margin-bottom: 0.35rem;
+        }
+
+        .unisciti-claim {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--c-text-muted);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.45;
+        }
+
+        .unisciti-claim strong {
+            color: var(--c-forest);
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 1.35rem 1rem;
+            border: 2px solid var(--c-border);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            content-visibility: auto;
+            contain-intrinsic-size: 260px;
+        }
+
+        .contact-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--c-surface-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.65rem;
+            border: 2px solid var(--c-primary);
+            color: var(--c-primary);
+        }
+
+        .contact-avatar svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+
+        .contact-avatar.avatar-glenda {
+            background-color: #fdf0ec;
+            border-color: var(--c-orange);
+            color: var(--c-orange);
+        }
+
+        .contact-avatar.avatar-andrea {
+            background-color: #edf5fa;
+            border-color: var(--c-blue);
+            color: var(--c-blue);
+        }
+
+        .contact-avatar.avatar-email {
+            background-color: #fef7e7;
+            border-color: var(--c-yellow);
+            color: #d89607;
+        }
+
+        .contact-avatar.avatar-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            border: none;
+            color: #ffffff;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            color: var(--c-forest);
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-role {
+            font-size: 0.85rem;
+            color: var(--c-text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 0.85rem;
+        }
+
+        .contact-phone-link {
+            color: var(--c-forest);
+            text-decoration: underline;
+            text-decoration-color: rgba(45, 90, 39, 0.35);
+            text-underline-offset: 3px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .contact-phone-link:hover,
+        .contact-phone-link:focus-visible {
+            color: var(--c-primary);
+            text-decoration-color: var(--c-primary);
+        }
+
+        .contact-card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #0f7a3d;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.75rem 1.4rem;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            min-height: 48px;
+            width: 100%;
+            max-width: 260px;
+            margin-top: auto;
+            box-shadow: 0 3px 8px rgba(15, 122, 61, 0.25);
+            transition: background 0.2s ease;
+        }
+
+        .contact-card-btn:hover,
+        .contact-card-btn:focus-visible {
+            background: #0b6130;
+        }
+
+        .contact-card-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .btn-email-link {
+            background: var(--c-forest);
+            box-shadow: 0 3px 8px rgba(45, 90, 39, 0.25);
+        }
+
+        .btn-insta-link {
+            background: linear-gradient(45deg, #c13584 0%, #b52778 50%, #833ab4 100%);
+            box-shadow: 0 3px 8px rgba(181, 39, 120, 0.25);
+        }
+
+        /* ==========================================================================
+           11. FASCIA PANORAMICA ILLUSTRATA & FOOTER
+           ========================================================================== */
+        .landscape-divider {
+            width: 100%;
+            overflow: hidden;
+            background: #fdfbf7;
+            margin-bottom: -3px;
+        }
+
+        .landscape-img {
+            width: 100%;
+            max-width: 1100px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .site-footer {
+            background: var(--c-forest);
+            color: #ffffff;
+            padding: 3rem 1rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffe082;
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-col p {
+            color: #f0f4ee;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            color: #f0f4ee;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--c-yellow);
+        }
+
+        .footer-legal-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.25rem;
+            margin: 0.85rem 0;
+            padding: 0;
+        }
+
+        .footer-legal-links a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--c-yellow);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: #f0f4ee;
+        }
+
+        .footer-motto-badge {
+            font-family: var(--font-script);
+            font-size: 1.6rem;
+            color: #ffe082;
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           12. PROGRESSIVE ENHANCEMENT: MEDIA QUERIES MOBILE-FIRST (min-width)
+           ========================================================================== */
+        @media (min-width: 640px) {
+            body {
+                font-size: 17px;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .btn {
+                width: auto;
+            }
+
+            .grid-finalita-7,
+            .finalita-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bank-details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contacts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tessera-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .tessera-actions .btn {
+                width: auto;
+            }
+
+            .dae-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dae-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .dae-actions .btn {
+                width: auto;
+            }
+
+            /* Layout armonioso per tablet (viewport >= 600px) */
+            .section,
+            .tessera-section,
+            .iniziative-section,
+            .contacts-section,
+            .faq-section {
+                padding: 2.25rem 1rem 2.5rem;
+            }
+
+            .donation-section {
+                padding: 1.75rem 1rem 2.25rem;
+            }
+
+            .hero-section {
+                padding: 2.5rem 1rem 3rem;
+            }
+
+            .hero-logo-img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-badge-wrap {
+                margin-bottom: 1.25rem;
+            }
+
+            .hero-title .word-oggi {
+                font-size: 2.3rem;
+            }
+
+            .hero-title .word-domani {
+                font-size: 2.4rem;
+            }
+
+            .footprints-decor {
+                margin: 1rem 0 0.75rem;
+            }
+
+            .finalita-card {
+                padding: 1.35rem 1.15rem;
+            }
+
+            .finalita-icon-circle {
+                width: 58px;
+                height: 58px;
+                margin-bottom: 0.75rem;
+            }
+
+            .finalita-icon-circle svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .finalita-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .finalita-card p {
+                font-size: 0.92rem;
+            }
+
+            .bank-card {
+                padding: 1.35rem 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .iban-highlight-box {
+                padding: 0.85rem 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .iban-code {
+                font-size: 1.15rem;
+            }
+
+            .contact-card {
+                padding: 1.35rem 1.15rem;
+            }
+
+            .contact-avatar {
+                width: 54px;
+                height: 54px;
+                margin-bottom: 0.75rem;
+            }
+
+            .contact-avatar svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .nav-toggle {
+                display: none !important;
+            }
+
+            .main-nav {
+                display: block !important;
+                width: auto;
+                margin-top: 0;
+                padding-top: 0;
+                border-top: none;
+                animation: none !important;
+            }
+
+            .main-nav ul {
+                flex-direction: row;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .main-nav a {
+                font-size: 0.90rem;
+                padding: 0.45rem 0.60rem;
+                border-radius: var(--radius-sm);
+                justify-content: center;
+            }
+
+            .nav-cta {
+                border-radius: var(--radius-full) !important;
+                padding: 0.45rem 0.95rem !important;
+                margin-top: 0;
+            }
+
+            .nav-dona {
+                border-radius: var(--radius-full) !important;
+                padding: 0.45rem 0.85rem !important;
+                margin-top: 0;
+            }
+
+            section[id],
+            .section,
+            .tessera-section,
+            .iniziative-section,
+            .donation-section,
+            .faq-section,
+            .contacts-section {
+                scroll-margin-top: 95px;
+            }
+
+            .section,
+            .tessera-section,
+            .iniziative-section,
+            .contacts-section,
+            .faq-section {
+                padding: 2.25rem 1rem 2.5rem;
+            }
+
+            .hero-section {
+                padding: 4rem 1.5rem 4.5rem;
+            }
+
+            .hero-logo-img {
+                width: 270px;
+                height: 270px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-title .title-prefix {
+                font-size: 1.7rem;
+            }
+
+            .hero-title .word-oggi {
+                font-size: 3.3rem;
+            }
+
+            .hero-title .word-domani {
+                font-size: 3.5rem;
+            }
+
+            .ribbon-banner {
+                font-size: 1.4rem;
+                padding: 0.75rem 2.8rem;
+            }
+
+            .leaf-sprig-svg {
+                width: 42px;
+                height: 32px;
+            }
+
+            .grid-finalita-7,
+            .finalita-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                max-width: 1140px;
+            }
+
+            .finalita-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .card-partecipazione {
+                grid-column: span 3;
+                max-width: 500px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .tessera-container,
+            .tessera-grid {
+                max-width: 1140px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2.25rem;
+            }
+
+            .tessera-info-box {
+                text-align: left;
+            }
+
+            .tessera-actions {
+                flex-direction: row;
+                gap: 12px;
+            }
+
+            .tessera-actions .btn {
+                flex: 1 1 auto;
+                width: auto;
+            }
+
+            .iniziative-container {
+                max-width: 1140px;
+            }
+
+            .iniziative-card {
+                flex-direction: row;
+                align-items: center;
+                padding: 2.25rem 2rem;
+                gap: 2.25rem;
+            }
+
+            .iniziative-content {
+                flex: 1 1 55%;
+            }
+
+            .dae-visual {
+                flex: 1 1 45%;
+            }
+
+            .iniziative-title {
+                font-size: 1.75rem;
+            }
+
+            /* Donazioni: Layout Desktop compatto in una singola schermata */
+            .donation-container {
+                max-width: 1140px;
+            }
+
+            .donation-section {
+                padding: 1.25rem 1rem 1.6rem;
+            }
+
+            .donation-section .ribbon-wrap {
+                margin: 0 auto 0.3rem;
+            }
+
+            .donation-title,
+            .donation-section h2 {
+                font-size: 1.75rem;
+                margin: 0.2rem 0 0.35rem;
+            }
+
+            .donation-subtitle,
+            .donation-section p.donation-subtitle {
+                font-size: 0.95rem;
+                margin: 0 auto 0.85rem;
+                max-width: 860px;
+                line-height: 1.35;
+            }
+
+            .donation-cards-grid {
+                display: grid;
+                grid-template-columns: 1fr 1.15fr;
+                gap: 1.25rem;
+                align-items: stretch;
+                margin-bottom: 0.75rem;
+            }
+
+            .card-cinque-per-mille {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 1.15rem 1.25rem;
+                margin-bottom: 0;
+            }
+
+            .bank-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 1.15rem 1.25rem;
+                margin-bottom: 0;
+            }
+
+            .cinque-header,
+            .bank-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.65rem;
+                min-height: 68px;
+                box-sizing: border-box;
+            }
+
+            .cinque-header {
+                border-bottom: 1px solid #fdeee7;
+            }
+
+            .bank-header {
+                border-bottom: 1.5px solid var(--c-border-subtle);
+            }
+
+            .cinque-title {
+                font-size: 1.15rem;
+                margin: 0;
+                line-height: 1.2;
+            }
+
+            .cf-highlight-box,
+            .iban-highlight-box {
+                padding: 0.6rem 0.85rem;
+                margin-bottom: 0.65rem;
+                gap: 0.35rem;
+                min-height: 82px;
+                box-sizing: border-box;
+            }
+
+            .cf-code {
+                font-size: 1.2rem;
+            }
+
+            .iban-code {
+                font-size: 1.05rem;
+            }
+
+            .cinque-desc {
+                margin: 0 0 0.45rem;
+                font-size: 0.88rem;
+                line-height: 1.45;
+            }
+
+            .cinque-bullets {
+                margin: 0;
+                font-size: 0.85rem;
+                gap: 0.3rem;
+            }
+
+            .bank-details-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.35rem 1rem;
+                font-size: 0.88rem;
+            }
+
+            .bank-causali-wrap {
+                margin-top: 0.65rem;
+                padding-top: 0.65rem;
+                font-size: 0.86rem;
+            }
+
+            .bank-causali-list {
+                gap: 0.25rem;
+            }
+
+            .bank-causali-note {
+                font-size: 0.78rem;
+                margin-top: 0.35rem;
+            }
+
+            .donation-transparency-note {
+                padding: 0.55rem 1rem;
+                font-size: 0.83rem;
+                line-height: 1.4;
+            }
+
+            .contacts-container {
+                max-width: 1140px;
+            }
+
+            .contacts-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.15rem;
+                margin-top: 1.5rem;
+            }
+
+            .contact-card {
+                padding: 1.5rem 1rem 1.25rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .contact-card-btn {
+                margin-top: auto;
+                width: 100%;
+            }
+
+            .footer-container {
+                display: grid;
+                grid-template-columns: 1.2fr 1fr;
+                gap: 3rem;
+                align-items: start;
+            }
+
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .grid-finalita-7,
+            .finalita-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .finalita-card {
+                flex: 1 1 240px;
+                max-width: 270px;
+            }
+
+            .card-partecipazione {
+                grid-column: auto;
+                max-width: 270px;
+                margin: 0;
+                width: auto;
+            }
+        }
+
+        @media print {
+            .site-header, .hero-cta-group, .contact-card-btn, .nav-cta, .btn-copy-iban, .btn-copy-cf, .skip-link {
+                display: none !important;
+            }
+            body {
+                background: #ffffff;
+                color: #000000;
+            }
+        }
