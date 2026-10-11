@@ -21,7 +21,7 @@ class SiteHeader extends HTMLElement {
         <div class="header-inner">
 
           <a href="${p('/')}" class="site-logo" aria-label="Polo d'Infanzia Madre Teresa di Calcutta — Torna alla homepage">
-            <img src="${p('/images/logopolo.png')}" alt="" class="site-logo-img" width="56" height="56">
+            <img src="${p('/images/logopolo.webp')}" alt="" class="site-logo-img" width="56" height="56">
             <span class="site-logo-text">
               <span class="site-logo-name">Madre Teresa di Calcutta</span>
               <span class="site-logo-sub">Nido &amp; Scuola dell'Infanzia · San Pietro in Vincoli (RA)</span>
@@ -189,9 +189,9 @@ class SiteFooter extends HTMLElement {
         <div class="institutional-logos">
           <p>Siti di utilità istituzionale:</p>
           <div class="logos-grid">
-            <a href="https://www.miur.gov.it/" target="_blank" rel="noopener"><img src="${p('/images/miur-1.png')}" alt="Logo MIUR" width="180" height="55" loading="lazy"></a>
-            <a href="https://www.fism.bo.it/" target="_blank" rel="noopener"><img src="${p('/images/fism-emilia-romagna.jpg')}" alt="Logo FISM Emilia-Romagna" width="180" height="55" loading="lazy"></a>
-            <a href="https://cercalatuascuola.istruzione.it/" target="_blank" rel="noopener"><img src="${p('/images/scuola-in-chiaro-1.png')}" alt="Logo Scuola in Chiaro" width="180" height="55" loading="lazy"></a>
+            <a href="https://www.miur.gov.it/" target="_blank" rel="noopener"><img src="${p('/images/miur-1.webp')}" alt="Logo MIUR" width="180" height="55" loading="lazy"></a>
+            <a href="https://www.fism.bo.it/" target="_blank" rel="noopener"><img src="${p('/images/fism-emilia-romagna.webp')}" alt="Logo FISM Emilia-Romagna" width="180" height="55" loading="lazy"></a>
+            <a href="https://cercalatuascuola.istruzione.it/" target="_blank" rel="noopener"><img src="${p('/images/scuola-in-chiaro-1.webp')}" alt="Logo Scuola in Chiaro" width="180" height="55" loading="lazy"></a>
           </div>
         </div>
       </div>
