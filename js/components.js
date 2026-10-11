@@ -34,8 +34,13 @@ class SiteHeader extends HTMLElement {
           <nav class="main-nav" aria-label="Menu Principale">
             <ul>
               <li><a href="${p('/')}">Home</a></li>
-              <li><a href="${p('/nido/')}">Il Nido</a></li>
-              <li><a href="${p('/infanzia/')}">La Scuola</a></li>
+              <li class="nav-dropdown-item">
+                <a href="${p('/nido/')}" aria-haspopup="true">Nido e Infanzia</a>
+                <div class="nav-dropdown-menu">
+                  <a href="${p('/nido/')}">🍼 L'Asilo Nido (9-36 mesi)</a>
+                  <a href="${p('/infanzia/')}">🌱 La Scuola dell'Infanzia (3-6 anni)</a>
+                </div>
+              </li>
               <li><a href="${p('/cucina/')}">La Cucina</a></li>
               <li><a href="${p('/galleria/')}">Galleria</a></li>
               <li><a href="${p('/news/')}">News</a></li>
