@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://graziano-code.github.io/madreteresaspiv/sitemap.xml

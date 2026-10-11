@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contattaci - Polo d'Infanzia "Madre Teresa di Calcutta"</title>
+    <meta name="description" content="Recapiti, numeri di telefono, email e orari di apertura della segreteria del Polo d'Infanzia Madre Teresa di Calcutta a San Pietro in Vincoli.">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+    <script src="../js/components.js" defer></script>
+    <link rel="preload" href="../fonts/titilliumweb-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/titilliumweb-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+    <site-header></site-header>
+
+    <main id="main-content" class="page-wrapper">
+        <article class="main-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../">Home</a>
+                <span aria-hidden="true">/</span>
+                <span>Informazioni</span>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Contatti</span>
+            </nav>
+
+            <h1 class="page-title">Contattaci</h1>
+
+            <h2 class="section-title" style="margin-top: 0;">I Nostri Recapiti</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div class="widget">
+                    <div class="widget-body">
+                        <h3 style="color: var(--c-primary); margin-bottom: 0.5rem;">Sede Principale</h3>
+                        <p><strong>Polo d'Infanzia Parrocchiale Paritario<br>"Madre Teresa di Calcutta"</strong></p>
+                        <p style="color: var(--c-text-muted); margin-top: 0.5rem;">Via Gambellara, 7<br>48125 Ravenna (San Pietro in Vincoli)</p>
+                        <p style="margin-top: 1rem;">
+                            <a href="https://maps.google.com/?q=Via+Gambellara+7+San+Pietro+in+Vincoli+Ravenna" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">📍 Apri su Google Maps</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="widget-body">
+                        <h3 style="color: var(--c-primary); margin-bottom: 0.5rem;">Orari Segreteria al Pubblico</h3>
+                        <table class="info-table" style="margin-top: 0; border: none; box-shadow: none;">
+                            <tbody>
+                                <tr><td>Lunedì</td><td><strong>08:30 – 11:30</strong></td></tr>
+                                <tr><td>Martedì</td><td><strong>13:30 – 17:00</strong></td></tr>
+                                <tr><td>Mercoledì</td><td><strong>08:30 – 11:30</strong></td></tr>
+                                <tr><td>Giovedì</td><td><strong>08:30 – 11:30</strong></td></tr>
+                                <tr><td>Venerdì</td><td><strong>08:30 – 11:30</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Telefoni ed Email</h2>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <td><strong>Centralino / Segreteria Principale</strong></td>
+                        <td><a href="tel:+390544551265" style="font-size: 1.1rem; font-weight: bold;">0544 551265</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Segreteria (linea diretta)</strong></td>
+                        <td>0544 551065</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fax</strong></td>
+                        <td>0544 1690211</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cellulare Sezione Nido</strong></td>
+                        <td><a href="tel:+393458820468">345 8820468</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cellulare Sezione Materna</strong></td>
+                        <td><a href="tel:+393455957864">345 5957864</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email Amministrazione</strong></td>
+                        <td><a href="mailto:matparrspv@gmail.com">matparrspv@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email Alternativa</strong></td>
+                        <td><a href="mailto:infanziasanpietro@libero.it">infanziasanpietro@libero.it</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title" style="margin-top: 3rem;">Inviaci un Messaggio</h2>
+            <p style="color: var(--c-text-muted); margin-bottom: 1.5rem;">Compila il modulo seguente per inviarci una richiesta. Ti risponderemo entro i giorni lavorativi successivi.</p>
+
+            <!-- FORM CONTATTI VIA FORMSPREE -->
+            <!-- Sostituire "{FORMSPREE_ID}" con l'ID creato su formspree.io -->
+            <form action="https://formspree.io/f/{FORMSPREE_ID}" method="POST" class="contact-form">
+
+                <div class="form-group">
+                    <label for="nome" class="form-label">
+                        Nome e Cognome <span class="required" aria-hidden="true">*</span><span class="sr-only">(obbligatorio)</span>
+                    </label>
+                    <input type="text" id="nome" name="nome" class="form-input" required autocomplete="name" placeholder="Es. Mario Rossi">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Email di contatto <span class="required" aria-hidden="true">*</span><span class="sr-only">(obbligatorio)</span>
+                    </label>
+                    <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="Es. mario.rossi@email.it">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono" class="form-label">
+                        Telefono <span class="form-hint" style="font-weight: normal; color: var(--c-text-muted);">(opzionale)</span>
+                    </label>
+                    <input type="tel" id="telefono" name="telefono" class="form-input" autocomplete="tel" placeholder="Es. 333 1234567">
+                </div>
+
+                <div class="form-group">
+                    <label for="messaggio" class="form-label">
+                        Il tuo messaggio <span class="required" aria-hidden="true">*</span><span class="sr-only">(obbligatorio)</span>
+                    </label>
+                    <textarea id="messaggio" name="messaggio" class="form-textarea" required placeholder="Scrivi qui la tua richiesta o domanda..."></textarea>
+                </div>
+
+                <!-- Anti-spam Honeypot nascosto -->
+                <div class="form-honeypot" aria-hidden="true">
+                    <label>Non compilare se sei umano: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+                </div>
+
+                <div class="form-check" style="margin-top: 0.5rem;">
+                    <input type="checkbox" id="privacy" name="accettazione_privacy" required value="Accettata">
+                    <label for="privacy">
+                        Ho letto l'<a href="../privacy/" target="_blank">Informativa sulla Privacy</a> e acconsento al trattamento dei miei dati per gestire questa richiesta. <span class="required" aria-hidden="true">*</span>
+                    </label>
+                </div>
+
+                <div style="margin-top: 1.25rem;">
+                    <button type="submit" class="btn btn-primary">✉ Invia Messaggio</button>
+                </div>
+            </form>
+
+        </article>
+
+        <site-sidebar></site-sidebar>
+    </main>
+
+    <site-footer></site-footer>
+</body>
+</html>

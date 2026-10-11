@@ -1,103 +1,226 @@
+/**
+ * WEB COMPONENTS
+ * Componenti riutilizzabili per Header, Sidebar e Footer.
+ * Vengono renderizzati lato client per evitare duplicazione di codice HTML.
+ */
+
+// Calcola il percorso base relativo partendo da dove si trova il file JS
+const scriptTag = document.querySelector('script[src$="components.js"]');
+const basePath = scriptTag ? scriptTag.getAttribute('src').replace('js/components.js', '') : '';
+
+// Helper per ottenere path corretti ovunque ci troviamo
+const getPath = (path) => {
+  if (path.startsWith('/')) {
+    path = path.substring(1); // Rimuovi slash iniziale
+  }
+  return basePath + path;
+};
+
+// ==========================================================================
+// 1. HEADER COMPONENT
+// ==========================================================================
 class SiteHeader extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = \`
-        <div style="max-width: 1000px; margin: 0 auto; background: white; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
-            <!-- Top Banner Img -->
-            <div style="text-align: center; border-bottom: 1px solid var(--c-border);">
-                <a href="index.html"><img src="images/cropped-scuola-materna-parrocchiale.png" alt="Banner Madre Teresa di Calcutta" style="width: 100%; display: block;"></a>
-            </div>
-            
-            <header class="site-header">
-                <div class="header-container" style="padding: 0;">
-                    <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="main-nav" style="margin: 1rem;">
-                        <span class="hamburger-bar"></span>
-                        <span class="hamburger-bar"></span>
-                        <span class="hamburger-bar"></span>
-                    </button>
+  connectedCallback() {
+    this.innerHTML = `
+      <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+      
+      <div class="site-banner">
+        <a href="${getPath('/')}">
+          <img src="${getPath('/images/cropped-scuola-materna-parrocchiale.png')}" alt="Polo d'Infanzia Paritario Madre Teresa di Calcutta - San Pietro in Vincoli" width="1200" height="200" fetchpriority="high">
+        </a>
+      </div>
 
-                    <nav id="main-nav" class="main-nav" aria-label="Navigazione Principale" style="display: block; width: 100%; border-bottom: 2px solid var(--c-border-subtle);">
-                        <ul style="display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; align-items: center; justify-content: flex-start; gap: 0;">
-                            <li><a href="index.html" style="padding: 1rem 1.5rem; font-weight: bold; color: var(--c-text); display: block;">Home</a></li>
-                            <li class="has-dropdown" style="position: relative;">
-                                <a href="#" style="padding: 1rem 1.5rem; font-weight: bold; color: var(--c-text); display: block;">GLI SPAZI ▾</a>
-                                <ul class="dropdown">
-                                    <li><a href="infanzia.html">LA SCUOLA DELL'INFANZIA</a></li>
-                                    <li><a href="nido.html" style="color: var(--c-blue);">IL NIDO</a></li>
-                                    <li><a href="cucina.html">LA CUCINA</a></li>
-                                    <li><a href="galleria.html">Galleria</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-dropdown" style="position: relative;">
-                                <a href="#" style="padding: 1rem 1.5rem; font-weight: bold; color: var(--c-text); display: block;">INFORMAZIONI ▾</a>
-                                <ul class="dropdown">
-                                    <li><a href="iscrizioni.html">COME ISCRIVERSI?</a></li>
-                                    <li><a href="contatti.html">CONTATTI</a></li>
-                                    <li><a href="info-genitori.html">Info per i genitori</a></li>
-                                    <li><a href="contributi.html">CONTRIBUTI RICEVUTI</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="modulistica.html" style="padding: 1rem 1.5rem; font-weight: bold; color: var(--c-text); display: block;">MODULISTICA</a></li>
-                            <li><a href="news.html" style="padding: 1rem 1.5rem; font-weight: bold; color: var(--c-text); display: block;">NEWS / EVENTI</a></li>
-                        </ul>
-                    </nav>
+      <header class="site-header">
+        <div class="nav-wrapper">
+          <!-- Desktop Nav -->
+          <nav class="main-nav" aria-label="Menu Principale">
+            <ul>
+              <li><a href="${getPath('/')}">Home</a></li>
+              <li class="nav-item-dropdown">
+                <a href="#" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault();">Gli Spazi</a>
+                <div class="nav-dropdown" aria-label="Sottomenu Gli Spazi">
+                  <a href="${getPath('/infanzia/')}">La Scuola dell'Infanzia</a>
+                  <a href="${getPath('/nido/')}">Il Nido</a>
+                  <a href="${getPath('/cucina/')}">La Cucina</a>
+                  <a href="${getPath('/galleria/')}">Galleria</a>
                 </div>
-                <style>
-                    .has-dropdown { position: relative; }
-                    .dropdown { display: none; position: absolute; top: 100%; left: 0; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); min-width: 250px; z-index: 1000; flex-direction: column; gap: 0; padding: 0.5rem 0; border: 1px solid var(--c-border); }
-                    .has-dropdown:hover .dropdown { display: flex; }
-                    .dropdown a { padding: 0.8rem 1.5rem; font-weight: bold; color: var(--c-text); border-bottom: 1px solid #f0f0f0; text-transform: uppercase; font-size: 0.9rem; }
-                    .dropdown a:hover { background: #f9f9f9; color: var(--c-blue); }
-                    .nav-toggle { display: none; }
-                    @media (max-width: 768px) {
-                        .nav-toggle { display: flex; }
-                        .main-nav { display: none !important; }
-                        .main-nav.is-open { display: block !important; }
-                        .main-nav ul { flex-direction: column; align-items: stretch !important; }
-                        .has-dropdown:hover .dropdown { display: none; }
-                        .has-dropdown.active .dropdown { display: flex; position: static; box-shadow: none; padding-left: 1rem; border: none; border-left: 3px solid var(--c-blue); }
-                    }
-                </style>
-            </header>
-        \`;
+              </li>
+              <li class="nav-item-dropdown">
+                <a href="#" aria-haspopup="true" aria-expanded="false" onclick="event.preventDefault();">Informazioni</a>
+                <div class="nav-dropdown" aria-label="Sottomenu Informazioni">
+                  <a href="${getPath('/iscrizioni/')}">Come Iscriversi?</a>
+                  <a href="${getPath('/contatti/')}">Contatti</a>
+                  <a href="${getPath('/info-genitori/')}">Info per i Genitori</a>
+                  <a href="${getPath('/contributi/')}">Contributi Ricevuti</a>
+                </div>
+              </li>
+              <li><a href="${getPath('/modulistica/')}">Modulistica</a></li>
+              <li><a href="${getPath('/news/')}">News / Eventi</a></li>
+            </ul>
+          </nav>
 
-        const toggle = this.querySelector('.nav-toggle');
-        const nav = this.querySelector('#main-nav');
-        if(toggle && nav) {
-            toggle.addEventListener('click', () => {
-                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-                toggle.setAttribute('aria-expanded', !isExpanded);
-                toggle.classList.toggle('is-active');
-                nav.classList.toggle('is-open');
-            });
-        }
-        const dropdowns = this.querySelectorAll('.has-dropdown > a');
-        dropdowns.forEach(drop => {
-            drop.addEventListener('click', (e) => {
-                if(window.innerWidth <= 768) {
-                    e.preventDefault();
-                    drop.parentElement.classList.toggle('active');
-                }
-            });
-        });
-    }
+          <!-- Mobile Toggle -->
+          <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Apri menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <nav id="mobile-nav" class="mobile-nav" aria-label="Menu Mobile">
+          <ul>
+            <li><a href="${getPath('/')}">Home</a></li>
+            <li><strong style="display:block; padding:0.7rem 1.25rem; background:var(--c-primary-light); color:var(--c-primary-dark); font-size:0.85rem; text-transform:uppercase;">Gli Spazi</strong></li>
+            <li class="mobile-dropdown"><a href="${getPath('/infanzia/')}">La Scuola dell'Infanzia</a></li>
+            <li class="mobile-dropdown"><a href="${getPath('/nido/')}">Il Nido</a></li>
+            <li class="mobile-dropdown"><a href="${getPath('/cucina/')}">La Cucina</a></li>
+            <li class="mobile-dropdown"><a href="${getPath('/galleria/')}">Galleria</a></li>
+            <li><strong style="display:block; padding:0.7rem 1.25rem; background:var(--c-primary-light); color:var(--c-primary-dark); font-size:0.85rem; text-transform:uppercase;">Informazioni</strong></li>
+            <li class="mobile-dropdown"><a href="${getPath('/iscrizioni/')}">Come Iscriversi?</a></li>
+            <li class="mobile-dropdown"><a href="${getPath('/contatti/')}">Contatti</a></li>
+            <li class="mobile-dropdown"><a href="${getPath('/info-genitori/')}">Info per i Genitori</a></li>
+            <li class="mobile-dropdown"><a href="${getPath('/contributi/')}">Contributi Ricevuti</a></li>
+            <li><a href="${getPath('/modulistica/')}">Modulistica</a></li>
+            <li><a href="${getPath('/news/')}">News / Eventi</a></li>
+          </ul>
+        </nav>
+      </header>
+    `;
+
+    // Evidenzia link attivo
+    const currentPath = window.location.pathname;
+    this.querySelectorAll('a').forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+      if (linkPath === currentPath && currentPath !== '/' || (currentPath === '/' && linkPath === '/')) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
 }
 customElements.define('site-header', SiteHeader);
 
-class SiteFooter extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = \`
-            <footer class="site-footer" style="margin-top: 3rem; text-align: center; border-top: 1px solid var(--c-border); padding: 1rem;">
-                <div style="font-size: 0.85rem; color: var(--c-blue);">
-                    <a href="#" style="color: var(--c-text); border: 1px solid #ddd; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.5rem;"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg> Stampa</a>
-                    <a href="#" style="color: var(--c-text); border: 1px solid #ddd; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.5rem;"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> E-mail</a>
-                    <a href="#" style="color: var(--c-text); border: 1px solid #ddd; padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.5rem;"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg> Facebook</a>
-                </div>
-                <div style="margin-top: 1rem; color: var(--c-blue); font-size: 0.9rem;">
-                    <p>Sito web creato con Polo d'Infanzia Paritario Madre Teresa.</p>
-                </div>
-            </footer>
+// ==========================================================================
+// 2. SIDEBAR COMPONENT
+// ==========================================================================
+class SiteSidebar extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <aside class="sidebar" aria-label="Barra laterale">
+        
+        <!-- Widget Contatti (Blu) -->
+        <div class="widget widget-contacts">
+          <div class="widget-title">Contatti & Orari</div>
+          <div class="widget-body">
+            <ul class="contacts-list">
+              <li>
+                <strong>Polo d'Infanzia Paritario<br>"Madre Teresa di Calcutta"</strong><br>
+                Nido e Scuola dell'Infanzia
+              </li>
+              <li>
+                <a href="https://maps.google.com/?q=Via+Gambellara+7+San+Pietro+in+Vincoli+Ravenna" target="_blank" rel="noopener">
+                  Via Gambellara, 7<br>48125 San Pietro in Vincoli (RA)
+                </a>
+              </li>
+              <li>
+                Tel. <a href="tel:+390544551265">0544 551265</a><br>
+                Fax 0544 1690211<br>
+                Email <a href="mailto:matparrspv@gmail.com">matparrspv@gmail.com</a>
+              </li>
+            </ul>
+
+            <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+              <strong>Orari Segreteria:</strong>
+              <ul class="orari-list">
+                <li><span>Lunedì</span> <span>08:30 – 11:30</span></li>
+                <li><span>Martedì</span> <span>13:30 – 17:00</span></li>
+                <li><span>Mercoledì</span> <span>08:30 – 11:30</span></li>
+                <li><span>Giovedì</span> <span>08:30 – 11:30</span></li>
+                <li><span>Venerdì</span> <span>08:30 – 11:30</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        \`;
-    }
+
+        <!-- Widget Articoli -->
+        <div class="widget widget-articles">
+          <div class="widget-title">Ultimi Articoli</div>
+          <div class="widget-body">
+            <ul>
+              <li><a href="${getPath('/news/#open-day')}">OPEN DAY A.S. 2026/2027</a></li>
+              <li><a href="${getPath('/news/#centro-estivo')}">Iscrizioni CENTRO ESTIVO 2026</a></li>
+              <li><a href="${getPath('/news/#bonus-nido')}">Bonus Nido d'infanzia 2026/2027</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </aside>
+    `;
+  }
+}
+customElements.define('site-sidebar', SiteSidebar);
+
+// ==========================================================================
+// 3. FOOTER COMPONENT
+// ==========================================================================
+class SiteFooter extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+      <!-- Loghi Istituzionali -->
+      <div class="page-wrapper" style="padding-top: 0; padding-bottom: 0;">
+        <div class="institutional-logos">
+          <p>Siti di utilità istituzionale:</p>
+          <div class="logos-grid">
+            <a href="https://www.miur.gov.it/" target="_blank" rel="noopener"><img src="${getPath('/images/miur-1.png')}" alt="Logo MIUR" width="200" height="60" loading="lazy"></a>
+            <a href="https://www.fism.bo.it/" target="_blank" rel="noopener"><img src="${getPath('/images/fism-emilia-romagna.jpg')}" alt="Logo FISM Emilia-Romagna" width="200" height="60" loading="lazy"></a>
+            <a href="https://cercalatuascuola.istruzione.it/cercalatuascuola/" target="_blank" rel="noopener"><img src="${getPath('/images/scuola-in-chiaro-1.png')}" alt="Logo Scuola in Chiaro" width="200" height="60" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          
+          <div>
+            <span class="footer-brand-name">Madre Teresa di Calcutta</span>
+            <div class="footer-address">
+              Polo d'Infanzia Parrocchiale Paritario<br>
+              Nido e Scuola dell'Infanzia<br>
+              Via Gambellara, 7<br>
+              48125 Ravenna (San Pietro in Vincoli)<br><br>
+              Tel: <a href="tel:+390544551265">0544 551265</a> | Fax: 0544 1690211<br>
+              Email: <a href="mailto:matparrspv@gmail.com">matparrspv@gmail.com</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-heading">Navigazione</div>
+            <ul class="footer-links">
+              <li><a href="${getPath('/infanzia/')}">La Scuola dell'Infanzia</a></li>
+              <li><a href="${getPath('/nido/')}">L'Asilo Nido</a></li>
+              <li><a href="${getPath('/iscrizioni/')}">Come Iscriversi</a></li>
+              <li><a href="${getPath('/modulistica/')}">Modulistica Genitori</a></li>
+              <li><a href="${getPath('/contatti/')}">Contatti e Orari</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-heading">Trasparenza & Privacy</div>
+            <ul class="footer-links">
+              <li><a href="${getPath('/contributi/')}">Contributi Ricevuti (L. 124/2017)</a></li>
+              <li><a href="${getPath('/privacy/')}">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>© ${new Date().getFullYear()} Parrocchia di San Pietro in Vincoli. Sito web creato per il Polo d'Infanzia Paritario "Madre Teresa di Calcutta".</p>
+        </div>
+      </footer>
+    `;
+  }
 }
 customElements.define('site-footer', SiteFooter);
