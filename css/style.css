@@ -46,8 +46,8 @@
   --c-primary-mid:    #3d5a3e;   /* Verde medio — sidebar, footer */
   --c-primary-light:  #e8f5ec;   /* Verde chiarissimo — sfondo sezioni */
 
-  --c-accent:         #9c4e18;   /* Arancio caldo — CTA principali */
-  --c-accent-dark:    #7a3d12;   /* Arancio scuro — hover CTA */
+  --c-accent:         #e07b39;   /* Arancio caldo — CTA principali */
+  --c-accent-dark:    #c96a28;   /* Arancio scuro — hover CTA */
   --c-accent-light:   #fef3ea;   /* Arancio chiarissimo — badge, sfondo */
 
   --c-yellow:         #f4d06f;   /* Giallo miele — link su sfondo scuro */
@@ -309,7 +309,7 @@ li { margin-bottom: 0.25rem; }
 /* CTA iscrizioni nel menu */
 .nav-cta-iscrizioni {
   background: var(--c-accent) !important;
-  color: #fff !important;
+  color: var(--c-text) !important;
   border-radius: var(--radius-full) !important;
   padding: 0.5rem 1.1rem !important;
   border-bottom: 3px solid transparent !important;
@@ -319,7 +319,7 @@ li { margin-bottom: 0.25rem; }
 .nav-cta-iscrizioni:hover,
 .nav-cta-iscrizioni:focus-visible {
   background: var(--c-accent-dark) !important;
-  color: #fff !important;
+  color: var(--c-text) !important;
   border-bottom-color: transparent !important;
 }
 
@@ -468,9 +468,9 @@ li { margin-bottom: 0.25rem; }
 .fab-bar .fab-phone:hover { background: var(--c-primary-dark); color: #fff; }
 .fab-bar .fab-contact {
   background: var(--c-accent);
-  color: #fff;
+  color: var(--c-text);
 }
-.fab-bar .fab-contact:hover { background: var(--c-accent-dark); color: #fff; }
+.fab-bar .fab-contact:hover { background: var(--c-accent-dark); color: var(--c-text); }
 .fab-icon { font-size: 1.1rem; }
 
 /* Su desktop la FAB è nascosta */
@@ -909,8 +909,8 @@ li { margin-bottom: 0.25rem; }
 .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .btn:active { transform: translateY(0); }
 
-.btn-primary { background: var(--c-accent); color: #fff; border-color: var(--c-accent); }
-.btn-primary:hover, .btn-primary:focus-visible { background: var(--c-accent-dark); border-color: var(--c-accent-dark); color: #fff; }
+.btn-primary { background: var(--c-accent); color: var(--c-text); border-color: var(--c-accent); }
+.btn-primary:hover, .btn-primary:focus-visible { background: var(--c-accent-dark); border-color: var(--c-accent-dark); color: var(--c-text); }
 
 .btn-white { background: #fff; color: var(--c-primary-dark); border-color: #fff; }
 .btn-white:hover, .btn-white:focus-visible { background: var(--c-primary-light); border-color: var(--c-primary-light); color: var(--c-primary-dark); }
