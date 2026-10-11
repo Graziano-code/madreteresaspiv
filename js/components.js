@@ -17,13 +17,7 @@ class SiteHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
-
-      <div class="site-topbar">
-        <span>📞 <a href="tel:+390544551265">0544 551265</a> &nbsp;|&nbsp; <a href="mailto:matparrspv@gmail.com">matparrspv@gmail.com</a></span>
-        <span class="topbar-badge">✨ Iscrizioni Aperte A.S. 2026/2027</span>
-      </div>
-
-      <header class="site-header">
+<header class="site-header">
         <div class="header-inner">
 
           <a href="${p('/')}" class="site-logo" aria-label="Polo d'Infanzia Madre Teresa di Calcutta — Torna alla homepage">
