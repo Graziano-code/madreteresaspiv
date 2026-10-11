@@ -31,20 +31,26 @@ class SiteHeader extends HTMLElement {
           <nav class="main-nav" aria-label="Menu Principale">
             <ul>
               <li><a href="${p('/')}">Home</a></li>
-              <li><a href="${p('/chi-siamo/')}">Chi Siamo</a></li>
               <li class="nav-dropdown-item">
-                <a href="${p('/nido/')}" aria-haspopup="true">Nido e Infanzia</a>
+                <a href="${p('/chi-siamo/')}" aria-haspopup="true">Il Polo</a>
                 <div class="nav-dropdown-menu">
+                  <a href="${p('/chi-siamo/')}">Chi Siamo</a>
                   <a href="${p('/nido/')}">🍼 L'Asilo Nido (12-36 mesi)</a>
                   <a href="${p('/infanzia/')}">🌱 La Scuola dell'Infanzia (3-6 anni)</a>
+                  <a href="${p('/cucina/')}">La Cucina Interna</a>
+                  <a href="${p('/galleria/')}">Galleria Fotografica</a>
                 </div>
               </li>
-              <li><a href="${p('/cucina/')}">La Cucina</a></li>
-              <li><a href="${p('/galleria/')}">Galleria</a></li>
+              <li class="nav-dropdown-item">
+                <a href="${p('/genitori/')}" aria-haspopup="true">Servizi</a>
+                <div class="nav-dropdown-menu">
+                  <a href="${p('/genitori/')}">Genitori</a>
+                  <a href="${p('/faq/')}">Domande Frequenti</a>
+                  <a href="${p('/modulistica/')}">Modulistica</a>
+                </div>
+              </li>
               <li><a href="${p('/news/')}">News</a></li>
               <li><a href="${p('/contatti/')}">Contatti</a></li>
-              <li><a href="${p('/genitori/')}">Genitori</a></li>
-              <li><a href="${p('/faq/')}">FAQ</a></li>
               <li><a href="${p('/iscrizioni/')}" class="nav-cta-iscrizioni">Iscriviti</a></li>
             </ul>
           </nav>
