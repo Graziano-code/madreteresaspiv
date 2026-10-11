@@ -34,7 +34,7 @@ class SiteHeader extends HTMLElement {
               <li class="nav-dropdown-item">
                 <a href="${p('/nido/')}" aria-haspopup="true">Nido e Infanzia</a>
                 <div class="nav-dropdown-menu">
-                  <a href="${p('/nido/')}">🍼 L'Asilo Nido (9-36 mesi)</a>
+                  <a href="${p('/nido/')}">🍼 L'Asilo Nido (12-36 mesi)</a>
                   <a href="${p('/infanzia/')}">🌱 La Scuola dell'Infanzia (3-6 anni)</a>
                 </div>
               </li>
@@ -58,8 +58,9 @@ class SiteHeader extends HTMLElement {
         <nav id="mobile-nav" class="mobile-nav" aria-label="Menu Mobile">
           <ul>
             <li><a href="${p('/')}">🏠 Home</a></li>
+            <li><a href="${p('/chi-siamo/')}">ℹ️ Chi Siamo</a></li>
             <li><span class="mobile-group-label">Il Polo d'Infanzia</span></li>
-            <li class="mobile-sub"><a href="${p('/nido/')}">🍼 L'Asilo Nido (9-36 mesi)</a></li>
+            <li class="mobile-sub"><a href="${p('/nido/')}">🍼 L'Asilo Nido (12-36 mesi)</a></li>
             <li class="mobile-sub"><a href="${p('/infanzia/')}">🌱 La Scuola dell'Infanzia (3-6 anni)</a></li>
             <li><a href="${p('/cucina/')}">🍳 La Cucina Interna</a></li>
             <li><a href="${p('/galleria/')}">📷 Galleria Fotografica</a></li>
