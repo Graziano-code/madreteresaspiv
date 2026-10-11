@@ -40,6 +40,7 @@ class SiteHeader extends HTMLElement {
               <li><a href="${p('/galleria/')}">Galleria</a></li>
               <li><a href="${p('/news/')}">News</a></li>
               <li><a href="${p('/contatti/')}">Contatti</a></li>
+              <li><a href="${p('/genitori/')}">Genitori</a></li>
               <li><a href="${p('/iscrizioni/')}" class="nav-cta-iscrizioni">Iscriviti</a></li>
             </ul>
           </nav>
@@ -62,7 +63,7 @@ class SiteHeader extends HTMLElement {
             <li><span class="mobile-group-label">Informazioni</span></li>
             <li class="mobile-sub"><a href="${p('/news/')}">📰 News ed Eventi</a></li>
             <li class="mobile-sub"><a href="${p('/modulistica/')}">📋 Modulistica Genitori</a></li>
-            <li class="mobile-sub"><a href="${p('/info-genitori/')}">👨‍👩‍👧 Info per i Genitori</a></li>
+            <li><a href="${p('/genitori/')}">👨‍👩‍👧 Genitori</a></li>
             <li class="mobile-sub"><a href="${p('/contributi/')}">📊 Contributi Ricevuti</a></li>
             <li class="mobile-sub"><a href="${p('/contatti/')}">📞 Contatti e Orari</a></li>
             <li class="mobile-sub"><a href="${p('/associazione/')}">🤝 Associazione Genitori</a></li>
