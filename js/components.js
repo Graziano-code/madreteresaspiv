@@ -35,14 +35,9 @@ class SiteHeader extends HTMLElement {
             <ul>
               <li><a href="${p('/')}">Home</a></li>
               <li><a href="${p('/nido/')}">Il Nido</a></li>
-              <li class="nav-dropdown-item">
-                <a href="${p('/infanzia/')}" aria-haspopup="true">La Scuola</a>
-                <div class="nav-dropdown-menu">
-                  <a href="${p('/infanzia/')}">Scuola dell'Infanzia (3-6 anni)</a>
-                  <a href="${p('/galleria/')}">Galleria Fotografica</a>
-                </div>
-              </li>
+              <li><a href="${p('/infanzia/')}">La Scuola</a></li>
               <li><a href="${p('/cucina/')}">La Cucina</a></li>
+              <li><a href="${p('/galleria/')}">Galleria</a></li>
               <li><a href="${p('/news/')}">News</a></li>
               <li><a href="${p('/contatti/')}">Contatti</a></li>
               <li><a href="${p('/associazione/')}">Associazione dei Genitori</a></li>
@@ -63,8 +58,8 @@ class SiteHeader extends HTMLElement {
             <li><span class="mobile-group-label">Il Polo d'Infanzia</span></li>
             <li class="mobile-sub"><a href="${p('/nido/')}">🍼 L'Asilo Nido (9-36 mesi)</a></li>
             <li class="mobile-sub"><a href="${p('/infanzia/')}">🌱 La Scuola dell'Infanzia (3-6 anni)</a></li>
-            <li class="mobile-sub"><a href="${p('/galleria/')}">📷 Galleria Fotografica</a></li>
             <li><a href="${p('/cucina/')}">🍳 La Cucina Interna</a></li>
+            <li><a href="${p('/galleria/')}">📷 Galleria Fotografica</a></li>
             <li><span class="mobile-group-label">Informazioni</span></li>
             <li class="mobile-sub"><a href="${p('/news/')}">📰 News ed Eventi</a></li>
             <li class="mobile-sub"><a href="${p('/modulistica/')}">📋 Modulistica Genitori</a></li>
