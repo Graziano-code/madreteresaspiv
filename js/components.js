@@ -114,7 +114,7 @@ class SiteSidebar extends HTMLElement {
               </li>
               <li>
                 Tel. <a href="tel:+390544551265"><strong>0544 551265</strong></a><br>
-                Cellulare Nido: <a href="tel:+393458820468">345 8820468</a><br>
+                Cellulare Nido: <a href="tel:+393382928671">338 2928671</a><br>
                 Email: <a href="mailto:matparrspv@gmail.com">matparrspv@gmail.com</a>
               </li>
             </ul>
@@ -165,7 +165,7 @@ class SiteFab extends HTMLElement {
           <span class="fab-icon" aria-hidden="true">📞</span>
           <span>Chiama</span>
         </a>
-        <a href="https://wa.me/393458820468?text=Buongiorno%2C%20vorrei%20informazioni%20sul%20Polo%20d%27Infanzia%20Madre%20Teresa%20di%20Calcutta"
+        <a href="https://wa.me/393382928671?text=Buongiorno%2C%20vorrei%20informazioni%20sul%20Polo%20d%27Infanzia%20Madre%20Teresa%20di%20Calcutta"
            class="fab-contact" target="_blank" rel="noopener">
           <span class="fab-icon" aria-hidden="true">💬</span>
           <span>WhatsApp</span>
