@@ -1381,3 +1381,44 @@ li { margin-bottom: 0.25rem; }
     padding: 0.7rem 1.2rem;
   }
 }
+
+
+/* ============================================================
+   FAB BAR — Fix pulsanti stretti su mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  .fab-bar {
+    gap: 0;
+  }
+  .fab-bar a {
+    padding: 0.65rem 0.35rem !important;
+    font-size: 0.82rem !important;
+    gap: 0.35rem !important;
+    min-width: 0;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .fab-bar a span:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  .fab-icon {
+    font-size: 1rem !important;
+    flex-shrink: 0;
+  }
+}
+
+/* Su schermi molto stretti (< 380px) nascondiamo il testo, resta solo l'icona */
+@media (max-width: 380px) {
+  .fab-bar a span:last-child {
+    display: none;
+  }
+  .fab-bar a {
+    min-height: 50px;
+  }
+  .fab-icon {
+    font-size: 1.3rem !important;
+  }
+}
