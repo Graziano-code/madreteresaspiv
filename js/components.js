@@ -69,6 +69,7 @@ class SiteHeader extends HTMLElement {
             <li><a href="${p('/genitori/')}">👨‍👩‍👧 Genitori</a></li>
             <li><a href="${p('/faq/')}">❓ Domande Frequenti</a></li>
             <li class="mobile-sub"><a href="${p('/contributi/')}">📊 Contributi Ricevuti</a></li>
+            <li><a href="${p('/contatti/')}">📞 Contatti e Orari</a></li>
             <li class="mobile-sub"><a href="${p('/contatti/')}">📞 Contatti e Orari</a></li>
             <li class="mobile-sub"><a href="${p('/associazione/')}">🤝 Associazione Genitori</a></li>
             <li class="mobile-cta"><a href="${p('/iscrizioni/')}">✨ Iscrizioni A.S. 2026/2027</a></li>
