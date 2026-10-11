@@ -114,7 +114,7 @@ class SiteSidebar extends HTMLElement {
                 <span style="font-size:0.82rem; opacity:.85;">Nido e Scuola dell'Infanzia</span>
               </li>
               <li>
-                <a href="https://maps.google.com/?q=Via+Gambellara+7+San+Pietro+in+Vincoli+Ravenna" target="_blank" rel="noopener">
+                <a href="https://maps.app.goo.gl/h6rEVsPEEbpA155p6" target="_blank" rel="noopener">
                   Via Gambellara, 7<br>48125 San Pietro in Vincoli (RA)
                 </a>
               </li>
