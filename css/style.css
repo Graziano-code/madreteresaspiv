@@ -459,7 +459,7 @@ li { margin-bottom: 0.25rem; }
 .hero {
   background: linear-gradient(135deg, var(--c-primary-dark) 0%, var(--c-primary) 60%, #4a8a5a 100%);
   color: #fff;
-  padding: clamp(3rem, 8vw, 5rem) var(--content-pad);
+  padding: clamp(1.75rem, 4vw, 3rem) var(--content-pad);
   text-align: center;
   position: relative;
   overflow: hidden;
