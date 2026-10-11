@@ -9,14 +9,14 @@
   </url>
 
   <url>
-    <loc>https://graziano-code.github.io/madreteresaspiv/infanzia/</loc>
+    <loc>https://graziano-code.github.io/madreteresaspiv/nido/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://graziano-code.github.io/madreteresaspiv/nido/</loc>
+    <loc>https://graziano-code.github.io/madreteresaspiv/infanzia/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -51,17 +51,17 @@
   </url>
 
   <url>
-    <loc>https://graziano-code.github.io/madreteresaspiv/info-genitori/</loc>
+    <loc>https://graziano-code.github.io/madreteresaspiv/genitori/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://graziano-code.github.io/madreteresaspiv/contributi/</loc>
+    <loc>https://graziano-code.github.io/madreteresaspiv/associazione/</loc>
     <lastmod>2026-10-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
@@ -79,7 +79,21 @@
   </url>
 
   <url>
+    <loc>https://graziano-code.github.io/madreteresaspiv/contributi/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://graziano-code.github.io/madreteresaspiv/privacy/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://graziano-code.github.io/madreteresaspiv/cookie-policy/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
