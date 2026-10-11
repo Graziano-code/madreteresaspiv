@@ -31,6 +31,7 @@ class SiteHeader extends HTMLElement {
           <nav class="main-nav" aria-label="Menu Principale">
             <ul>
               <li><a href="${p('/')}">Home</a></li>
+              <li><a href="${p('/chi-siamo/')}">Chi Siamo</a></li>
               <li class="nav-dropdown-item">
                 <a href="${p('/nido/')}" aria-haspopup="true">Nido e Infanzia</a>
                 <div class="nav-dropdown-menu">
