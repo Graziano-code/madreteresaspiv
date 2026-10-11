@@ -50,7 +50,7 @@ class SiteHeader extends HTMLElement {
               </li>
               <li><a href="${p('/news/')}">News</a></li>
               <li><a href="${p('/contatti/')}">Contatti</a></li>
-              <li><a href="${p('/associazione/')}">Associazione</a></li>
+              <li><a href="${p('/associazione/')}">Associazione dei Genitori</a></li>
               <li><a href="${p('/iscrizioni/')}" class="nav-cta-iscrizioni">Iscriviti</a></li>
             </ul>
           </nav>
