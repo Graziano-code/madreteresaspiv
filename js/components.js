@@ -49,7 +49,6 @@ class SiteHeader extends HTMLElement {
               <li><a href="${p('/news/')}">News</a></li>
               <li><a href="${p('/contatti/')}">Contatti</a></li>
               <li><a href="${p('/genitori/')}">Genitori</a></li>
-              <li><a href="${p('/faq/')}">Domande Frequenti</a></li>
               <li><a href="${p('/faq/')}">FAQ</a></li>
               <li><a href="${p('/iscrizioni/')}" class="nav-cta-iscrizioni">Iscriviti</a></li>
             </ul>
