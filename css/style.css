@@ -46,8 +46,8 @@
   --c-primary-mid:    #3d5a3e;   /* Verde medio — sidebar, footer */
   --c-primary-light:  #e8f5ec;   /* Verde chiarissimo — sfondo sezioni */
 
-  --c-accent:         #e07b39;   /* Arancio caldo — CTA principali */
-  --c-accent-dark:    #b85e22;   /* Arancio scuro — hover CTA */
+  --c-accent:         #9c4e18;   /* Arancio caldo — CTA principali */
+  --c-accent-dark:    #7a3d12;   /* Arancio scuro — hover CTA */
   --c-accent-light:   #fef3ea;   /* Arancio chiarissimo — badge, sfondo */
 
   --c-yellow:         #f4d06f;   /* Giallo miele — link su sfondo scuro */
@@ -1065,8 +1065,8 @@ li { margin-bottom: 0.25rem; }
 
 .footer-brand-name { font-family: var(--font-script); font-size: 1.6rem; color: var(--c-yellow); margin-bottom: var(--space-sm); display: block; }
 .footer-address { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.72); }
-.footer-address a { color: var(--c-yellow); text-decoration: none; }
-.footer-address a:hover { color: #fff; text-decoration: underline; }
+.footer-address a { color: var(--c-yellow); text-decoration: underline; text-underline-offset: 3px; }
+.footer-address a:hover { color: #fff; }
 .footer-heading { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--c-yellow); margin-bottom: var(--space-sm); }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: 0.35rem; border-bottom: none; }
@@ -1079,7 +1079,7 @@ li { margin-bottom: 0.25rem; }
   padding-top: var(--space-md);
   border-top: 1px solid rgba(255,255,255,0.12);
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.75);
   text-align: center;
 }
 
