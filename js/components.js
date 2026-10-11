@@ -27,8 +27,11 @@ class SiteHeader extends HTMLElement {
         <div class="header-inner">
 
           <a href="${p('/')}" class="site-logo" aria-label="Polo d'Infanzia Madre Teresa di Calcutta — Torna alla homepage">
-            <span class="site-logo-name">Madre Teresa di Calcutta</span>
-            <span class="site-logo-sub">Nido &amp; Scuola dell'Infanzia · San Pietro in Vincoli (RA)</span>
+            <img src="${p('/images/logopolo.png')}" alt="" class="site-logo-img" width="56" height="56">
+            <span class="site-logo-text">
+              <span class="site-logo-name">Madre Teresa di Calcutta</span>
+              <span class="site-logo-sub">Nido &amp; Scuola dell'Infanzia · San Pietro in Vincoli (RA)</span>
+            </span>
           </a>
 
           <nav class="main-nav" aria-label="Menu Principale">
